@@ -12,6 +12,7 @@
 	<artifactId>NabApp</artifactId>
 	<version>0.0.1</version>
 	<name>NabApp</name>
+	<packaging>war</packaging>
 	<description>Spring Boot application to manage team growth </description>
 	<properties>
 		<java.version>17</java.version>
