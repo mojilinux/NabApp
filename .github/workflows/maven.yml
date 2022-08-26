@@ -29,3 +29,4 @@ jobs:
         python-version: '3.9'
         cache: 'pip' # caching pip dependencies
     - run: pip3 install fandogh-cli --upgrade
+    - run: fandogh --version
