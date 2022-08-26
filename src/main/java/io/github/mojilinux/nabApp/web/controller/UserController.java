@@ -19,14 +19,14 @@ public class UserController {
     }
 
     @GetMapping()
-    public Iterable<User> getUser(int pageNumber, int pageSize){
+    public Iterable<User> getUser(int pageNumber, int pageSize) {
         PageRequest page = PageRequest.of(pageNumber, pageSize, Sort.by("createdDate").descending());
         return userRepository.findAll(page).getContent();
     }
 
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public User addUser(@RequestBody User user){
+    public User addUser(@RequestBody User user) {
         return userRepository.save(user);
     }
 
