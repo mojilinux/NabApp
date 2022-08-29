@@ -30,5 +30,5 @@ jobs:
         cache: 'pip' # caching pip dependencies
     - run: pip3 install fandogh-cli --upgrade
     - run: fandogh --version
-    - run: fandogh login --username dehghanian --password F1a2
+    - run: fandogh login --username dehghanian --password
     - run: fandogh image init  --name=nab-app
