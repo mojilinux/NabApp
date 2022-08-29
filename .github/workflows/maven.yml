@@ -32,5 +32,5 @@ jobs:
     - run: fandogh --version
     #- run: fandogh image init --name nab-app
     - run: fandogh login --help
-    - run: fandogh login --username dehghanian -F1a2n3dogh!
+    - run: fandogh login --username dehghanian -*** F1a2n3dogh!
     - run: fandogh image init  --name=nab-app
