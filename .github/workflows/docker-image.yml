@@ -24,10 +24,10 @@ jobs:
       run: mvn clean package -DskipTests
     - run: mkdir staging && cp target/*.war staging
     - run: ls
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Package
-        path: staging
+#     - uses: actions/upload-artifact@v3
+#       with:
+#         name: Package
+#         path: staging
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag nab-app:0.0.1
