@@ -22,7 +22,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean package -DskipTests
-    - run: mkdir target && cp target/*.war target
+    - run: mkdir staging && cp target/*.war staging
+    - run: ls
     - uses: actions/upload-artifact@v3
       with:
         name: Package
