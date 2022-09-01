@@ -32,10 +32,12 @@ jobs:
 #     - name: Docker Push
 #       run: docker push dehghan68/nab-app
       
-    - 
-      name: Build and push
-      uses: docker/build-push-action@v3
-      with:
+      - name: Show directory
+        run: ls
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
           context: .
           push: true
           tags: dehghan68/nab-app:0.0.1
