@@ -26,7 +26,7 @@ jobs:
       - name: Prepare release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: mvn --batch-mode release:prepare -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN
+        run: mvn --batch-mode release:prepare -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN -DskipTest
       - name: Perform release
         env:
           DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_TOKEN }}
