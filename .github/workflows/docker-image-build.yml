@@ -36,7 +36,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./
+          file: ./Dockerfile
           push: true
           tags: dehghan68/nab-app:0.0.1
       #- name: Publish to Docker Hub
