@@ -1,4 +1,15 @@
 FROM openjdk:17-jdk-alpine
-ADD staging/NabApp-0.0.1.war target/NabApp-0.0.1.war
+
+# Refer to Maven build -> finalName
+ARG JAR_FILE=target/NabApp.jar
+
+# cd /opt/app
+WORKDIR /opt/app
+
+# cp target/spring-boot-web.jar /opt/app/app.jar
+COPY ${JAR_FILE} NabApp.jar
+
 EXPOSE 80
-ENTRYPOINT ["java","-jar","-Dspring.profiles.active=prod","target/NabApp-0.0.1.war"]
+
+# java -jar /opt/app/app.jar
+ENTRYPOINT ["java","-jar","-Dspring.profiles.active=prod","NabApp.jar"]
