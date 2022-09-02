@@ -45,17 +45,18 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
       
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v1
-        with:
-          name: NabApp
-          path: target/
+#       - uses: actions/checkout@v2
+#       - uses: actions/download-artifact@v1
+#         with:
+#           name: NabApp
+#           path: target/
           
       - uses: actions/checkout@v2
 
       - uses: actions/download-artifact@v3
         with:
-          name: NabApp
+          name: NabApp-0.0.1-SNAPSHOT
+          path: staging
     
       - name: Display structure of downloaded files
         run: ls -R    
