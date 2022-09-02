@@ -24,12 +24,12 @@ jobs:
       - name: Build with Maven
         run: mvn clean install -DskipTests
       - name: Publish to Docker Hub
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          repository: dockerHubUser/dockerHubRepository
-          tags: ${{github.run_number}} 
+          repository: dehghan68/nab-app
+          tags: 0.0.1 
      # - name: Build the Docker image
      # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
      # - name: Set up JDK
