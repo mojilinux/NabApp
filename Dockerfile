@@ -1,7 +1,7 @@
 FROM openjdk:17-jdk-alpine
 
 # Refer to Maven build -> finalName
-ARG JAR_FILE=target/NabApp.jar
+ARG JAR_FILE=target/NabApp-0.0.1.jar
 
 # cd /opt/app
 WORKDIR /opt/app
