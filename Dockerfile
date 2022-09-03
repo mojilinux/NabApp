@@ -1,13 +1,13 @@
 FROM openjdk:17-jdk-alpine
 
 # Refer to Maven build -> finalName
-ARG JAR_FILE=/app/target/NabApp-0.0.1.jar
+ARG JAR_FILE=target/NabApp-0.0.1.jar
 
 # cd /opt/app
-WORKDIR /opt/app
+#WORKDIR /opt/app
 
 # cp target/spring-boot-web.jar /opt/app/app.jar
-COPY --from=build ${JAR_FILE} /NabApp.jar
+COPY ${JAR_FILE} /NabApp.jar
 
 EXPOSE 80
 
