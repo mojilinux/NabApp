@@ -96,7 +96,7 @@ jobs:
         run: |
           docker push dehghan68/nab-app:0.0.2
           
-      - name: Deploy to heroku   
+      # - name: Deploy to heroku   
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
