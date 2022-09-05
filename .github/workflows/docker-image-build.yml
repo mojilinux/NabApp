@@ -95,6 +95,14 @@ jobs:
       - name: Docker push
         run: |
           docker push dehghan68/nab-app:0.0.2
+          
+      - name: Deploy to heroku   
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "dehghan-blog" #Must be unique in Heroku
+          heroku_email: "dehghanian68@gmail.com"
+          usedocker: true    
 #   run:
 #           runs-on: ubuntu-18.04
 #           needs: [build, deploy]
