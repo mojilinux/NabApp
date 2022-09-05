@@ -32,5 +32,5 @@ jobs:
     - run: fandogh --version
     #- run: fandogh image init --name nab-app
     - run: fandogh login --help
-    - run: fandogh login --username dehghanian --password F
+    - run: fandogh login --username dehghanian --password ${{ secrets.DOCKER_USERNAME }}
     - run: fandogh image init  --name=nab-app
