@@ -79,7 +79,7 @@ jobs:
           docker push dehghan68/nab-app:0.0.2
           
       
-      - uses: actions/checkout@v3
+#       - uses: actions/checkout@v3
       - name: Deploy to Liara    
         uses: actions/setup-node@v3
         with:
