@@ -89,5 +89,5 @@ jobs:
           LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
         run: |
           npm i -g @liara/cli@3.0.1
-          liara deploy --app="nab" --api-token="$LIARA_TOKEN" -p=80 --detach    
+          liara deploy --app="nab" --api-token="$LIARA_TOKEN" -p=8080 --detach    
           
