@@ -96,6 +96,19 @@ jobs:
         run: |
           docker push dehghan68/nab-app:0.0.2
           
+          
+      - name: Deploy to Liara    
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - name: update-liara
+        env:
+          LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
+        run: |
+          npm i -g @liara/cli@3.0.1
+          liara deploy --app="nab" --api-token="$LIARA_TOKEN" -p=80 --detach    
+          
       # - name: Deploy to heroku   
 #       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
 #         with:
@@ -104,12 +117,12 @@ jobs:
 #           heroku_email: "dehghanian68@gmail.com"
 #           usedocker: true
 #   flydeploy:
-      - name: Deploy app to fly
+     # - name: Deploy app to fly
 #         runs-on: ubuntu-latest
 #         steps:
-      - uses: actions/checkout@v2
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only    
+      #- uses: actions/checkout@v2
+      #- uses: superfly/flyctl-actions/setup-flyctl@master
+      #- run: flyctl deploy --remote-only    
 #   run:
 #           runs-on: ubuntu-18.04
 #           needs: [build, deploy]
