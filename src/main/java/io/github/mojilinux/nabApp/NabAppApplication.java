@@ -6,13 +6,12 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-//extends SpringBootServletInitializer
-public class NabAppApplication  {
+public class NabAppApplication extends SpringBootServletInitializer {
 
-//	@Override
-//	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-//		return super.configure(builder);
-//	}
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(NabAppApplication.class);
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(NabAppApplication.class, args);

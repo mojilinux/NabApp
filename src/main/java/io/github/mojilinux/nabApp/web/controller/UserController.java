@@ -3,14 +3,14 @@ package io.github.mojilinux.nabApp.web.controller;
 import io.github.mojilinux.nabApp.model.User;
 import io.github.mojilinux.nabApp.repository.IUserRepository;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "/api/users", produces = "application/json")
+@RequestMapping(path = "/api/users")
 public class UserController {
 
     private final IUserRepository userRepository;
@@ -20,9 +20,9 @@ public class UserController {
     }
 
     @GetMapping()
-    public Iterable<User> getUser(int pageNumber, int pageSize) {
-        PageRequest page = PageRequest.of(pageNumber, pageSize, Sort.by("createdDate").descending());
-        return userRepository.findAll(page).getContent();
+    public String getUser(Model model) {
+        model.addAttribute("user", userRepository.findAll());
+        return "view-users";
     }
 
     @PostMapping(consumes = "application/json")
