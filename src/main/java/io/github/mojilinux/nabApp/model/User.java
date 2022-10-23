@@ -29,6 +29,11 @@ public class User extends BaseEntity<Long>{
     @Size(min = 5, max = 254)
     private String username;
 
+    @Size(max = 30)
+    @NotNull
+    @Column(name = "Email")
+    private String email;
+
     @JsonIgnore
     @NotNull
     @Size(min = 60, max = 60)
